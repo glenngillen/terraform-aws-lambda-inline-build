@@ -16,7 +16,7 @@ the Lambda:
 
 ```hcl
 module "lambda" {
-  source            = "glenngillen/aws-lambda-inline-build/module"
+  source            = "glenngillen/lambda-inline-build/module"
   version           = "1.0.1"
 
   name        = "my-function"

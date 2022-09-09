@@ -37,7 +37,7 @@ module "archive" {
   source_dir  = var.source_dir
 }
 module "this" {
-  source            = "glenngillen/aws-lambda/module"
+  source            = "glenngillen/lambda/module"
   version           = "1.0.4"
 
   name       = var.name
