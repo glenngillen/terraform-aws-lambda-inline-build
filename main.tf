@@ -7,7 +7,7 @@ locals {
 }
 
 module "builder" {
-  source            = "glenngillen/multiline-command/module"
+  source            = "glenngillen/multiline-command/gg"
   version           = "1.0.0"
   
   working_dir = var.source_dir
@@ -24,7 +24,7 @@ resource "random_id" "this" {
 }
 
 module "archive" {
-  source            = "glenngillen/archive/module"
+  source            = "glenngillen/archive/gg"
   version           = "1.0.0"
 
   depends_on = [
