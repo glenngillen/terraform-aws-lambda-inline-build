@@ -17,7 +17,7 @@ the Lambda:
 ```hcl
 module "lambda" {
   source            = "glenngillen/lambda-inline-build/module"
-  version           = "1.0.1"
+  version           = "1.0.3"
 
   name        = "my-function"
   source_dir  = "${path.cwd}/app/my-function"
