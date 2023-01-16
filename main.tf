@@ -8,7 +8,7 @@ locals {
 
 module "builder" {
   source            = "glenngillen/multiline-command/gg"
-  version           = "~> 1.0.0"
+  version           = "~> 1.0.1"
   
   working_dir = var.source_dir
   command     = var.build_cmd
@@ -27,12 +27,8 @@ module "archive" {
   source            = "glenngillen/archive/gg"
   version           = "~> 1.0.0"
 
-  depends_on = [
-    module.builder
-  ]
-
   triggers    = local.triggers
-  output_file = "${path.cwd}/${random_id.this.hex}.zip"
+  output_file = "${path.cwd}/${module.builder.id}-${random_id.this.hex}.zip"
   working_dir = var.source_dir
   source_dir  = var.source_dir
 }
