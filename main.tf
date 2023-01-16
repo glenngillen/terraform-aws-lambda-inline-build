@@ -8,7 +8,7 @@ locals {
 
 module "builder" {
   source            = "glenngillen/multiline-command/gg"
-  version           = "1.0.0"
+  version           = "~> 1.0.0"
   
   working_dir = var.source_dir
   command     = var.build_cmd
@@ -25,7 +25,7 @@ resource "random_id" "this" {
 
 module "archive" {
   source            = "glenngillen/archive/gg"
-  version           = "1.0.0"
+  version           = "~> 1.0.0"
 
   depends_on = [
     module.builder
@@ -38,7 +38,7 @@ module "archive" {
 }
 module "this" {
   source            = "glenngillen/lambda/aws"
-  version           = "1.0.10"
+  version           = "~> 1.0.11"
 
   name       = var.name
   filename   = module.archive.output_file
