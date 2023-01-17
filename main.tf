@@ -1,7 +1,6 @@
 locals {
   dir_sha = base64sha256(join("", [for f in fileset(var.source_dir, "/**") : filebase64sha256("${var.source_dir}/${f}")]))
   triggers = { 
-    always_run = "${timestamp()}"
     dir_sha = local.dir_sha
   }
 }
