@@ -20,3 +20,6 @@ variable "memory_size" {
 variable "tags" {
   default = {}
 }
+variable "force" {
+  default = false
+}
