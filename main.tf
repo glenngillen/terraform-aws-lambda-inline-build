@@ -32,6 +32,7 @@ module "archive" {
   source_dir  = var.source_dir
 }
 module "this" {
+  depends_on = [ module.archive ]
   source            = "glenngillen/lambda/aws"
   version           = "~> 1.0.12"
 
