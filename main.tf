@@ -33,7 +33,7 @@ module "archive" {
 }
 module "this" {
   source            = "glenngillen/lambda/aws"
-  version           = "~> 1.0.11"
+  version           = "~> 1.0.12"
 
   name       = var.name
   filename   = module.archive.output_file
